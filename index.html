@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="شیراز ابزار - فروشگاه تخصصی ابزار برقی، شارژی و تجهیزات صنعتی">
+<title>شیراز ابزار | فروشگاه تخصصی ابزار و ماشین‌آلات صنعتی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{
+--yellow:#ffc400;--yellow2:#ffd21f;--black:#111;--dark:#181818;--dark2:#242424;
+--white:#fff;--bg:#f6f6f6;--line:#e7e7e7;--text:#222;--muted:#777;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Vazirmatn",sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+a{text-decoration:none;color:inherit}
+button,input{font-family:inherit}
+button{cursor:pointer;border:0}
+.container{width:min(1400px,94%);margin:auto}
+.topbar{height:32px;background:#0b0b0b;color:#eee;font-size:11px}
+.topbar .container{height:100%;display:flex;align-items:center;justify-content:space-between}
+.topbar i{color:var(--yellow);margin-left:6px}
+.header{background:var(--dark);color:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 4px 18px #0002}
+.header-main{min-height:78px;display:flex;align-items:center;gap:35px}
+.logo{display:flex;align-items:center;gap:10px;min-width:220px}
+.logo-icon{width:48px;height:48px;border:3px solid var(--yellow);border-radius:50%;display:grid;place-items:center;color:var(--yellow);font-size:22px}
+.logo strong{display:block;font-size:24px;color:#fff;line-height:1.1}
+.logo small{color:#bbb;font-size:9px}
+.search{flex:1;max-width:560px;height:45px;background:#fff;border-radius:4px;display:flex;overflow:hidden;margin:auto}
+.search input{flex:1;border:0;outline:0;padding:0 18px;color:#555;font-size:13px}
+.search button{width:55px;background:var(--yellow);font-size:18px}
+.header-actions{display:flex;align-items:center;gap:25px;font-size:12px}
+.action{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.action i{font-size:20px;color:var(--yellow)}
+.cart-count{background:var(--yellow);color:#111;border-radius:50%;font-size:10px;min-width:19px;height:19px;display:grid;place-items:center;margin-right:-8px;margin-top:-22px}
+.nav{border-top:1px solid #333}
+.nav .container{display:flex;justify-content:center;gap:40px;height:45px;align-items:center}
+.nav a{font-size:12px;color:#ddd;position:relative;transition:.25s}
+.nav a:hover,.nav a.active{color:var(--yellow)}
+.nav a.active:after{content:"";position:absolute;bottom:-13px;right:0;left:0;height:2px;background:var(--yellow)}
+.menu-toggle{display:none;color:#fff;background:none;font-size:24px}
+.hero{height:370px;background:#161616;overflow:hidden;position:relative;color:#fff}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .6s;display:flex;align-items:center}
+.slide.active{opacity:1}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,#111 0%,#1118 48%,#111 100%),url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1800&q=85") center/cover}
+.slide:nth-child(2) .hero-bg{background:linear-gradient(90deg,#111 0%,#1117 48%,#111 100%),url("https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=1800&q=85") center/cover}
+.slide:nth-child(3) .hero-bg{background:linear-gradient(90deg,#111 0%,#1117 48%,#111 100%),url("https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=1800&q=85") center/cover}
+.hero-content{position:relative;z-index:2;width:min(1400px,94%);margin:auto;text-align:right}
+.hero-content h1{font-size:36px;font-weight:700;margin-bottom:0}
+.hero-content .brand{font-size:58px;line-height:1;color:var(--yellow);font-weight:900;letter-spacing:3px}
+.hero-content h2{font-size:25px;margin:8px 0}
+.hero-content p{color:#ddd;font-size:15px}
+.hero-features{display:flex;gap:35px;margin-top:25px}
+.hero-feature{display:flex;align-items:center;gap:9px;font-size:11px}
+.hero-feature i{color:var(--yellow);font-size:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--yellow);color:#111;padding:9px 25px;font-weight:700;border-radius:3px;font-size:12px;margin-top:20px;transition:.25s}
+.btn:hover{background:#fff;transform:translateY(-2px)}
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:42px;height:42px;border-radius:50%;background:#111a;color:var(--yellow);font-size:18px}
+.slider-btn:hover{background:var(--yellow);color:#111}
+.prev{right:22px}.next{left:22px}
+.dots{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:5}
+.dot{width:7px;height:7px;border-radius:50%;background:#777}.dot.active{background:var(--yellow);width:22px;border-radius:5px}
+.features{background:#fff;padding:16px 0}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.feature-card{border:1px solid var(--line);padding:13px 20px;display:flex;align-items:center;gap:14px;background:#fff;transition:.25s}
+.feature-card:hover{border-color:var(--yellow);transform:translateY(-2px);box-shadow:0 8px 20px #0000000d}
+.feature-card i{font-size:27px;color:var(--yellow)}
+.feature-card strong{display:block;font-size:13px}.feature-card span{font-size:10px;color:var(--muted)}
+.section{padding:38px 0}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.section-title{font-size:21px;font-weight:800;position:relative;padding-right:12px}
+.section-title:before{content:"";position:absolute;right:0;top:8px;width:4px;height:22px;background:var(--yellow)}
+.view-all{font-size:11px;color:#555}.view-all:hover{color:#d09f00}
+.category-row{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
+.category{height:90px;background:var(--dark);color:#fff;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;transition:.25s}
+.category i{font-size:25px;color:var(--yellow)}
+.category span{font-size:10px}.category:hover{background:var(--yellow);color:#111;transform:translateY(-3px)}.category:hover i{color:#111}
+.products{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.product{background:#fff;border:1px solid var(--line);border-radius:4px;position:relative;overflow:hidden;transition:.25s}
+.product:hover{transform:translateY(-5px);border-color:var(--yellow);box-shadow:0 12px 25px #00000012}
+.product-img{height:185px;display:grid;place-items:center;position:relative;padding:12px}
+.product-img img{width:100%;height:100%;object-fit:contain;transition:.3s}.product:hover img{transform:scale(1.07)}
+.badge{position:absolute;top:10px;right:10px;background:#f44336;color:#fff;padding:1px 7px;border-radius:3px;font-size:9px}
+.badge.yellow{right:auto;left:10px;background:var(--yellow);color:#111}
+.wish{position:absolute;left:9px;top:38px;background:none;color:#aaa;font-size:17px;z-index:2}.wish.active{color:#f33}
+.product-info{padding:10px 12px}
+.product-title{font-size:11px;font-weight:600;height:43px;overflow:hidden}
+.brand-name{font-size:9px;color:#999;margin-top:3px}
+.rating{color:#f4b400;font-size:10px;margin:4px 0}
+.price{font-weight:800;font-size:13px}.price small{font-size:9px;font-weight:400}
+.product-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:7px;border-top:1px solid #eee;padding-top:7px}
+.add-cart{background:#111;color:#fff;width:30px;height:30px;border-radius:3px}.add-cart:hover{background:var(--yellow);color:#111}
+.promo{background:var(--dark);color:#fff;min-height:155px;display:flex;align-items:center;overflow:hidden;position:relative}
+.promo-content{padding:25px;position:relative;z-index:2;width:55%}
+.promo h2{color:var(--yellow);font-size:23px}.promo p{font-size:11px;color:#ccc;max-width:520px}
+.promo-img{position:absolute;left:2%;bottom:-25px;width:45%;height:210px;object-fit:contain;filter:drop-shadow(0 10px 15px #000)}
+.brands{background:#fff;padding:20px 0}.brand-row{display:flex;align-items:center;justify-content:space-around;gap:25px}.brand-logo{font-size:21px;font-weight:900;color:#777;filter:grayscale(1);transition:.25s}.brand-logo:hover{filter:none;color:#111}.brand-logo:nth-child(1){color:#111}.brand-logo:nth-child(2){color:#d22}.brand-logo:nth-child(4){font-style:italic}
+.blog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.article{background:#fff;border:1px solid var(--line);overflow:hidden}.article img{width:100%;height:140px;object-fit:cover}.article-body{padding:12px}.article small{color:#999;font-size:9px}.article h3{font-size:12px;margin:5px 0;height:43px;overflow:hidden}.article a{font-size:10px;color:#c09400}
+.reviews{background:#fff}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.review{border:1px solid var(--line);padding:18px;background:#fff}.review-head{display:flex;align-items:center;gap:10px}.avatar{width:40px;height:40px;border-radius:50%;background:#222;color:var(--yellow);display:grid;place-items:center}.review strong{font-size:12px}.review p{font-size:11px;color:#666;margin-top:10px}
+.footer{background:#171717;color:#ddd;padding:40px 0 0}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:35px}.footer h3{color:#fff;font-size:14px;margin-bottom:15px;border-right:3px solid var(--yellow);padding-right:8px}.footer p,.footer a{font-size:10px;color:#aaa}.footer a{display:block;margin:5px 0}.footer a:hover{color:var(--yellow)}.contact-line{display:flex;gap:9px;margin:7px 0}.contact-line i{color:var(--yellow);width:18px}.socials{display:flex;gap:9px;margin-top:15px}.socials a{width:32px;height:32px;background:#292929;display:grid;place-items:center;border-radius:50%;font-size:13px}.copyright{margin-top:30px;border-top:1px solid #333;padding:15px 0;text-align:center;font-size:10px;color:#888}
+.archive{padding:35px 0}.breadcrumb{font-size:10px;color:#999;margin-bottom:12px}.archive h1{font-size:25px;margin-bottom:25px}.archive-layout{display:grid;grid-template-columns:250px 1fr;gap:20px}.filters{background:#fff;border:1px solid var(--line);padding:18px;height:max-content}.filter-title{font-size:14px;font-weight:700;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:15px}.filter-group{border-bottom:1px solid #eee;padding:13px 0}.filter-group h4{font-size:11px;margin-bottom:9px}.check{display:flex;align-items:center;gap:7px;font-size:10px;color:#666;margin:5px 0}.check input{accent-color:var(--yellow)}.range{width:100%;accent-color:var(--yellow)}.filter-btn{width:100%;background:var(--yellow);padding:9px;font-size:11px;font-weight:700;margin-top:15px}.archive-tools{background:#fff;border:1px solid var(--line);padding:10px 15px;margin-bottom:15px;display:flex;justify-content:space-between;align-items:center;font-size:11px}.sort{border:1px solid #ddd;padding:5px 10px;background:#fff;font-size:10px}.archive-products{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.pagination{display:flex;justify-content:center;gap:5px;margin-top:25px}.page{width:30px;height:30px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:11px}.page.active{background:var(--yellow);border-color:var(--yellow)}
+.mobile-filter{display:none}
+@media(max-width:1100px){
+.header-main{gap:15px}.logo{min-width:180px}.header-actions{gap:12px}.nav .container{gap:25px}.category-row{grid-template-columns:repeat(4,1fr)}.products{grid-template-columns:repeat(4,1fr)}.product:nth-child(5){display:none}
+}
+@media(max-width:800px){
+.topbar .container span:last-child{display:none}.header-main{min-height:65px}.logo{min-width:auto}.logo strong{font-size:18px}.logo small{display:none}.logo-icon{width:38px;height:38px;font-size:17px}.search{order:3;position:absolute;top:72px;right:3%;left:3%;max-width:none}.header-main{flex-wrap:wrap;padding:10px 0 55px}.header-actions{margin-right:auto}.header-actions .login{display:none}.menu-toggle{display:block;order:-1}.nav{display:none}.nav.open{display:block}.nav .container{height:auto;flex-direction:column;gap:0;padding:8px 0}.nav a{padding:6px}.nav a.active:after{display:none}.hero{margin-top:0;height:430px}.hero-content{padding-top:20px}.hero-content h1{font-size:25px}.hero-content .brand{font-size:45px}.hero-content h2{font-size:19px}.hero-features{display:grid;grid-template-columns:1fr 1fr;gap:12px}.feature-grid{grid-template-columns:1fr 1fr}.products{grid-template-columns:repeat(2,1fr)}.product:nth-child(5){display:block}.product-img{height:150px}.promo-content{width:100%;padding-right:25px}.promo-img{opacity:.28;width:70%}.blog-grid{grid-template-columns:1fr 1fr}.review-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.archive-layout{display:block}.filters{display:none}.mobile-filter{display:block;background:#111;color:#fff;padding:9px 15px;margin-bottom:12px;font-size:11px}.archive-products{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+.topbar{font-size:9px}.header-actions .cart-text{display:none}.hero{height:470px}.feature-grid{grid-template-columns:1fr}.category-row{display:flex;overflow-x:auto;padding-bottom:5px}.category{min-width:110px}.section{padding:28px 0}.products{gap:8px}.product-info{padding:8px}.product-img{height:125px}.product-title{font-size:10px}.price{font-size:11px}.blog-grid,.footer-grid{grid-template-columns:1fr}.brand-row{overflow-x:auto;justify-content:flex-start}.brand-logo{min-width:100px;text-align:center}.archive-products{gap:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+<div class="container">
+<span><i class="fa-solid fa-phone"></i> پشتیبانی و مشاوره خرید: ۰۷۱-۳۶۲۰ ۱۳۳۴</span>
+<span><i class="fa-solid fa-truck-fast"></i> ارسال سریع به سراسر کشور | ضمانت اصالت کالا</span>
+</div>
+</div>
+
+<header class="header">
+<div class="container header-main">
+<button class="menu-toggle" aria-label="منو"><i class="fa-solid fa-bars"></i></button>
+<a class="logo" href="#home">
+<div class="logo-icon"><i class="fa-solid fa-gear"></i></div>
+<div><strong>شیراز ابزار</strong><small>مرجع تخصصی ابزار و تجهیزات صنعتی</small></div>
+</a>
+<form class="search" onsubmit="event.preventDefault(); searchProducts()">
+<input id="searchInput" type="search" placeholder="جستجو در بین محصولات...">
+<button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
+<div class="header-actions">
+<a class="action login" href="#"><i class="fa-regular fa-user"></i><span>ورود / ثبت نام</span></a>
+<a class="action" href="#products"><i class="fa-solid fa-cart-shopping"></i><span class="cart-text">سبد خرید</span><b class="cart-count" id="cartCount">۰</b></a>
+</div>
+</div>
+<nav class="nav" id="nav"><div class="container">
+<a class="active" href="#home">صفحه اصلی</a><a href="#products">محصولات</a><a href="#brands">برندها</a><a href="#products">استعلام قیمت</a><a href="#magazine">مجله ها</a><a href="#about">درباره ما</a><a href="#contact">تماس با ما</a>
+</div></nav>
+</header>
+
+<main id="home">
+<section class="hero" id="hero">
+<div class="slide active"><div class="hero-bg"></div><div class="hero-content">
+<h1>نمایندگی رسمی برند</h1><div class="brand">ELMAX</div><h2>در ایران</h2><p>ابزار حرفه‌ای برای پروژه‌های حرفه‌ای</p>
+<div class="hero-features"><div class="hero-feature"><i class="fa-solid fa-truck-fast"></i><span>آماده ارسال<br>ارسال سریع محصولات</span></div><div class="hero-feature"><i class="fa-solid fa-shield-halved"></i><span>تضمین کیفیت<br>ضمانت اصالت کالا</span></div><div class="hero-feature"><i class="fa-solid fa-box"></i><span>ارسال سریع<br>تحویل در کوتاه‌ترین زمان</span></div><div class="hero-feature"><i class="fa-solid fa-headset"></i><span>پشتیبانی تخصصی<br>مشاوره قبل و بعد از خرید</span></div></div>
+<a class="btn" href="#products">مشاهده محصولات <i class="fa-solid fa-arrow-left"></i></a>
+</div></div>
+<div class="slide"><div class="hero-bg"></div><div class="hero-content"><h1>قدرت واقعی برای</h1><div class="brand">پروژه‌های بزرگ</div><h2>ابزارهای حرفه‌ای صنعتی</h2><p>انتخابی مطمئن برای کارگاه‌ها و متخصصان</p><a class="btn" href="#products">خرید ابزار <i class="fa-solid fa-arrow-left"></i></a></div></div>
+<div class="slide"><div class="hero-bg"></div><div class="hero-content"><h1>تجهیزات تخصصی</h1><div class="brand">INDUSTRIAL</div><h2>با کیفیت و دوام بالا</h2><p>همراه شما در سخت‌ترین پروژه‌ها</p><a class="btn" href="#categories">مشاهده دسته‌بندی‌ها <i class="fa-solid fa-arrow-left"></i></a></div></div>
+<button class="slider-btn prev" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-right"></i></button>
+<button class="slider-btn next" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-left"></i></button>
+<div class="dots"><span class="dot active" onclick="goSlide(0)"></span><span class="dot" onclick="goSlide(1)"></span><span class="dot" onclick="goSlide(2)"></span></div>
+</section>
+
+<section class="features"><div class="container feature-grid">
+<div class="feature-card"><i class="fa-solid fa-truck-fast"></i><div><strong>ارسال سریع</strong><span>ارسال به سراسر ایران</span></div></div>
+<div class="feature-card"><i class="fa-solid fa-shield-halved"></i><div><strong>ضمانت اصالت کالا</strong><span>۱۰۰٪ تضمین اصالت</span></div></div>
+<div class="feature-card"><i class="fa-solid fa-headset"></i><div><strong>پشتیبانی تخصصی</strong><span>مشاوره و راهنمایی خرید</span></div></div>
+<div class="feature-card"><i class="fa-solid fa-award"></i><div><strong>نمایندگی رسمی</strong><span>محصولات برندهای معتبر</span></div></div>
+</div></section>
+
+<section class="section" id="categories"><div class="container">
+<div class="section-head"><h2 class="section-title">دسته‌بندی محصولات</h2><a class="view-all" href="#products">مشاهده همه <i class="fa-solid fa-angle-left"></i></a></div>
+<div class="category-row">
+<a class="category" href="#products"><i class="fa-solid fa-screwdriver-wrench"></i><span>ابزار برقی</span></a>
+<a class="category" href="#products"><i class="fa-solid fa-toolbox"></i><span>ابزار دستی</span></a>
+<a class="category" href="#products"><i class="fa-solid fa-battery-full"></i><span>ابزار شارژی</span></a>
+<a class="category" href="#products"><i class="fa-solid fa-wind"></i><span>کمپرسور</span></a>
+<a class="category" href="#products"><i class="fa-solid fa-fire-flame-curved"></i><span>تجهیزات جوشکاری</span></a>
+<a class="category" href="#products"><i class="fa-solid fa-helmet-safety"></i><span>تجهیزات ایمنی</span></a>
+<a class="category" href="#products"><i class="fa-solid fa-gears"></i><span>لوازم جانبی</span></a>
+<a class="category" href="#products"><i class="fa-solid fa-industry"></i><span>ماشین‌آلات صنعتی</span></a>
+</div></div></section>
+
+<section class="section" id="products"><div class="container">
+<div class="section-head"><h2 class="section-title">محصولات ویژه</h2><a class="view-all" href="#archive">مشاهده همه <i class="fa-solid fa-angle-left"></i></a></div>
+<div class="products" id="productGrid"></div>
+</div></section>
+
+<section class="container" id="about"><div class="promo">
+<div class="promo-content"><h2>درباره برند ELMAX</h2><p>تجهیزات حرفه‌ای برای پروژه‌های حرفه‌ای؛ مجموعه‌ای از ابزارهای باکیفیت برای متخصصان، کارگاه‌ها و پروژه‌های صنعتی.</p><a class="btn" href="#products">مشاهده محصولات ELMAX</a></div>
+<img class="promo-img" src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=900&q=85" alt="ابزار برقی حرفه‌ای">
+</div></section>
+
+<section class="brands" id="brands"><div class="container brand-row">
+<div class="brand-logo">ELMAX</div><div class="brand-logo">Ronix</div><div class="brand-logo">BOSCH</div><div class="brand-logo">Makita</div><div class="brand-logo">DEWALT</div><div class="brand-logo">metabo</div><div class="brand-logo">Milwaukee</div>
+</div></section>
+
+<section class="section" id="magazine"><div class="container">
+<div class="section-head"><h2 class="section-title">مجله ابزار</h2><a class="view-all" href="#">مشاهده همه</a></div>
+<div class="blog-grid">
+<article class="article"><img src="https://images.unsplash.com/photo-1581147036324-c17ac41d9c47?auto=format&fit=crop&w=700&q=80" alt="دریل"><div class="article-body"><small>راهنمای خرید</small><h3>راهنمای انتخاب دریل مناسب برای پروژه‌های صنعتی</h3><a href="#">ادامه مطلب ←</a></div></article>
+<article class="article"><img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=700&q=80" alt="ابزار"><div class="article-body"><small>آموزش</small><h3>تفاوت ابزار شارژی و برقی چیست؟</h3><a href="#">ادامه مطلب ←</a></div></article>
+<article class="article"><img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=700&q=80" alt="ابزار کارگاهی"><div class="article-body"><small>راهنمای خرید</small><h3>چگونه یک دستگاه فرز مناسب انتخاب کنیم؟</h3><a href="#">ادامه مطلب ←</a></div></article>
+<article class="article"><img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=700&q=80" alt="کارگاه"><div class="article-body"><small>معرفی ابزار</small><h3>بهترین ابزارهای حرفه‌ای برای کارگاه</h3><a href="#">ادامه مطلب ←</a></div></article>
+</div></div></section>
+
+<section class="section reviews"><div class="container">
+<div class="section-head"><h2 class="section-title">نظرات مشتریان</h2></div>
+<div class="review-grid">
+<div class="review"><div class="review-head"><div class="avatar">م</div><div><strong>محمد رضایی</strong><div class="rating">★★★★★</div></div></div><p>کیفیت ابزار عالی بود و سفارش خیلی سریع به دستم رسید. پشتیبانی هم کاملاً حرفه‌ای پاسخگو بود.</p></div>
+<div class="review"><div class="review-head"><div class="avatar">ع</div><div><strong>علی کریمی</strong><div class="rating">★★★★★</div></div></div><p>برای کارگاه چند ابزار سفارش دادم. بسته‌بندی مناسب و کیفیت محصولات دقیقاً مطابق توضیحات بود.</p></div>
+<div class="review"><div class="review-head"><div class="avatar">س</div><div><strong>سعید احمدی</strong><div class="rating">★★★★★</div></div></div><p>مشاوره قبل از خرید خیلی کمکم کرد تا ابزار مناسب پروژه‌ام را انتخاب کنم. ممنون از تیم شیراز ابزار.</p></div>
+</div></div></section>
+
+<section class="archive" id="archive"><div class="container">
+<div class="breadcrumb">خانه / محصولات / تمام محصولات</div><h1>تمام محصولات</h1>
+<button class="mobile-filter" onclick="toggleFilters()"><i class="fa-solid fa-filter"></i> نمایش فیلترها</button>
+<div class="archive-layout">
+<aside class="filters" id="filters"><div class="filter-title"><i class="fa-solid fa-filter"></i> دسته‌بندی محصولات</div>
+<div class="filter-group"><h4>برند</h4><label class="check"><input type="checkbox"> ELMAX</label><label class="check"><input type="checkbox"> Ronix</label><label class="check"><input type="checkbox"> Bosch</label><label class="check"><input type="checkbox"> Makita</label><label class="check"><input type="checkbox"> DeWALT</label><label class="check"><input type="checkbox"> Milwaukee</label></div>
+<div class="filter-group"><h4>محدوده قیمت</h4><input class="range" type="range" min="0" max="100" value="70"><div style="font-size:9px;color:#999">۰ تا ۵۰,۰۰۰,۰۰۰ تومان</div></div>
+<div class="filter-group"><h4>نوع ابزار</h4><label class="check"><input type="checkbox"> ابزار برقی</label><label class="check"><input type="checkbox"> ابزار شارژی</label><label class="check"><input type="checkbox"> تجهیزات صنعتی</label></div>
+<div class="filter-group"><h4>موجودی</h4><label class="check"><input type="checkbox"> فقط کالاهای موجود</label></div>
+<button class="filter-btn" onclick="alert('فیلترها اعمال شدند')">اعمال فیلتر</button>
+</aside>
+<div><div class="archive-tools"><span>نمایش ۱۲ محصول</span><select class="sort"><option>مرتب‌سازی: جدیدترین</option><option>ارزان‌ترین</option><option>گران‌ترین</option><option>پرفروش‌ترین</option></select></div><div class="archive-products" id="archiveGrid"></div><div class="pagination"><button class="page active">۱</button><button class="page">۲</button><button class="page">۳</button><button class="page">...</button><button class="page">۱۲</button></div></div>
+</div></div></section>
+</main>
+
+<footer class="footer" id="contact"><div class="container">
+<div class="footer-grid">
+<div><h3>شیراز ابزار</h3><p>مرجع تخصصی خرید ابزار و تجهیزات صنعتی با ارائه محصولات حرفه‌ای و خدمات تخصصی به مشتریان و متخصصان سراسر کشور.</p><div class="socials"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-telegram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
+<div><h3>دسترسی سریع</h3><a href="#home">صفحه اصلی</a><a href="#products">محصولات</a><a href="#about">درباره ما</a><a href="#contact">تماس با ما</a><a href="#magazine">مجله</a></div>
+<div><h3>خدمات مشتریان</h3><a href="#">پیگیری سفارش</a><a href="#">شرایط ارسال</a><a href="#">ضمانت بازگشت</a><a href="#">پرسش‌های متداول</a><a href="#">قوانین و مقررات</a></div>
+<div><h3>تماس با ما</h3><div class="contact-line"><i class="fa-solid fa-phone"></i><span>۰۷۱-۳۶۲۰ ۱۳۳۴</span></div><div class="contact-line"><i class="fa-solid fa-envelope"></i><span>info@shirazabzar.ir</span></div><div class="contact-line"><i class="fa-solid fa-location-dot"></i><span>شیراز، خیابان اصلی، مرکز ابزار</span></div></div>
+</div>
+<div class="copyright">تمامی حقوق این وب‌سایت محفوظ است. © ۱۴۰۵ شیراز ابزار</div>
+</div></footer>
+
+<script>
+const products=[
+["دریل چکشی 850 وات ELMAX ED-850","ELMAX","۲,۹۹۰,۰۰۰","https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=500&q=85","ویژه"],
+["مینی فرز 115 میلی‌متر ELMAX AG-115","ELMAX","۲,۱۶۰,۰۰۰","https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=500&q=85","تخفیف"],
+["دریل بتن کن ELMAX RH-26","ELMAX","۳,۸۹۰,۰۰۰","https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=500&q=85","ویژه"],
+["دستگاه جوش 200 آمپر ELMAX ARC-200","ELMAX","۴,۹۵۰,۰۰۰","https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=500&q=85","تخفیف"],
+["مجموعه ابزار 108 پارچه ELMAX","ELMAX","۵,۲۹۰,۰۰۰","https://images.unsplash.com/photo-1581147036324-c17ac41d9c47?auto=format&fit=crop&w=500&q=85","ویژه"],
+["اره گردبر 185 میلی‌متری ELMAX CS-185","ELMAX","۳,۴۹۰,۰۰۰","https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=500&q=85","تخفیف"],
+["پیچ‌گوشتی شارژی 12 ولت ELMAX CD-12","ELMAX","۲,۶۹۰,۰۰۰","https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=500&q=85","ویژه"],
+["جعبه ابزار حرفه‌ای ELMAX TB-20","ELMAX","۱,۹۹۰,۰۰۰","https://images.unsplash.com/photo-1581147036324-c17ac41d9c47?auto=format&fit=crop&w=500&q=85","تخفیف"],
+["کمپرسور باد 50 لیتری ELMAX AC-50L","ELMAX","۶,۹۰۰,۰۰۰","https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=500&q=85","ویژه"],
+["فرز انگشتی ELMAX DG-4","ELMAX","۱,۸۹۰,۰۰۰","https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=500&q=85","تخفیف"],
+["ست ابزار 24 پارچه ELMAX ST-24","ELMAX","۲,۳۹۰,۰۰۰","https://images.unsplash.com/photo-1581147036324-c17ac41d9c47?auto=format&fit=crop&w=500&q=85","ویژه"],
+["جک سوسماری 3 تن ELMAX TJ-3T","ELMAX","۳,۲۶۰,۰۰۰","https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=500&q=85","تخفیف"]
+];
+function productCard(p){
+return `<article class="product"><div class="product-img"><span class="badge">${p[4]}</span><span class="badge yellow">ELMAX</span><button class="wish" onclick="toggleWish(this)" aria-label="علاقه‌مندی"><i class="fa-regular fa-heart"></i></button><img loading="lazy" src="${p[3]}" alt="${p[0]}"></div><div class="product-info"><div class="product-title">${p[0]}</div><div class="brand-name">${p[1]}</div><div class="rating">★★★★★ <span style="color:#999">۴.۸</span></div><div class="product-bottom"><div class="price">${p[2]} <small>تومان</small></div><button class="add-cart" onclick="addCart()" aria-label="افزودن به سبد"><i class="fa-solid fa-cart-plus"></i></button></div></div></article>`;
+}
+document.getElementById("productGrid").innerHTML=products.slice(0,5).map(productCard).join("");
+document.getElementById("archiveGrid").innerHTML=products.map(productCard).join("");
+let cart=0;
+function addCart(){cart++;document.getElementById("cartCount").textContent=cart.toLocaleString("fa-IR");}
+function toggleWish(btn){btn.classList.toggle("active");btn.innerHTML=btn.classList.contains("active")?'<i class="fa-solid fa-heart"></i>':'<i class="fa-regular fa-heart"></i>'}
+let slide=0,slides=document.querySelectorAll(".slide"),dots=document.querySelectorAll(".dot");
+function goSlide(n){slide=n;slides.forEach((s,i)=>s.classList.toggle("active",i===n));dots.forEach((d,i)=>d.classList.toggle("active",i===n))}
+function changeSlide(n){goSlide((slide+n+slides.length)%slides.length)}
+setInterval(()=>changeSlide(1),6000);
+function searchProducts(){let q=document.getElementById("searchInput").value.trim();if(q){document.getElementById("archive").scrollIntoView({behavior:"smooth"});alert("نتایج جستجو برای «"+q+"» نمایش داده شد.");}}
+function toggleFilters(){document.getElementById("filters").style.display=document.getElementById("filters").style.display==="block"?"none":"block"}
+document.querySelector(".menu-toggle").addEventListener("click",()=>document.getElementById("nav").classList.toggle("open"));
+document.querySelectorAll(".nav a").forEach(a=>a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open")));
+</script>
+</body>
+</html>
